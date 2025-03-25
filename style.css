@@ -1,0 +1,549 @@
+/* header:
+ nav_container - весь header 
+row - здесь будет флекс, смести его к центру, здесь wrap 
+content_flex - ещё один флекс зачем не знаю, здесь justife и align-items
+all_buts_flex - содержит все ссылки в виде кнопок и кнопки, должен быть flex
+nav_log - логотип simple
+nav_but_text - ссылки с текстом, находятся в ul, li, a
+nav_but_svg - кнопки svg поиска и выхода, тоже должны быть flex
+but_finder - кнопка svg поиска
+but_log_out - кнопка svg выхода
+
+main:
+first - первый блок main, должен быть flex, row, wrap
+внутри него будет div container_first c container_first_h, container_first_p, first_but - flex; также внутри будет img_first с img
+
+second - второй блок main, содержит div с классом cards,
+внутри него находятся divы - 
+- card1 - содержит img, и div text_card1 с заголовком и p
+- card2 - содержит img, и div text_card2 заголовком и p
+- card3 - содержит img, и div text_card3 заголовком и p
+
+Также в second содержится div - main_card он содержит img и main_card_text, 
+который содержит заголовок, и два p
+
+third height 645 px - третий блок main, содержит 4 divа
+- block1 - содержит (div img_prod с img), p - заголовок, p - подтекст, p - текст, ссылку с svg
+- block2 - содержит (div img_prod с img), p - заголовок, p - подтекст, p - текст, ссылку с svg
+- block3 - содержит (div img_prod с img), p - заголовок, p - подтекст, p - текст, ссылку с svg
+- block4 - содержит (div img_prod с img), p - заголовок, p - подтекст, p - текст, ссылку с svg
+
+section sec_1 922 X 200 внутри four - чётвёртый блок main содержит 4 diva -
+- part1 - который содержит ссылку а с img
+- part2 - который содержит ссылку а с img
+- part3 - который содержит ссылку а с img
+- part4 - который содержит ссылку а с img
+
+section sec_2 height 500px внутри div scetch 
+внутри diva два diva .s_p_1 и .s_p_2
+внутри .s_p_1 - h1, p, button
+внутри .s_p_2 - img
+
+footer содержит два diva .foot_1 и .foot_2
+.foot_1 содержит svg логотип и div .foot_buts с четырьмя кнопками с svg
+.foot_2 содержит p*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu&family=Ubuntu+Sans:ital,wght@0,100;1,100&display=swap");
+
+html,
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+header {
+  width: 100vw;
+  height: 5rem;
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  /* margin-right: -15px;
+  margin-left: -15px; */
+}
+.content_flex {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 5rem;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.all_buts_flex {
+  display: flex;
+  flex-direction: row;
+  column-gap: 3rem;
+}
+
+.nav_but_svg {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.nav_but_svg > button {
+  background-color: white;
+  border: none;
+}
+
+.nav_but_svg > button > svg {
+  stroke: rgb(76, 88, 102);
+  cursor: pointer;
+  transition: stroke 0.3s;
+}
+
+.nav_but_svg > button > svg:hover {
+  stroke: rgb(137, 182, 254);
+  cursor: pointer;
+}
+
+.nav_but_text > ul {
+  padding: 0;
+  display: flex;
+  column-gap: 3rem;
+  flex-direction: row;
+}
+
+.nav_but_text > ul > li {
+  list-style: none;
+}
+.nav_but_text > ul > li > a {
+  text-decoration: none;
+  font-family: "Roboto";
+  font-size: 20px;
+  transition: color 0.3s;
+  color: rgba(76, 88, 102, 1);
+}
+
+.nav_but_text > ul > li > a:hover {
+  color: rgb(137, 182, 254);
+}
+
+.first {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  height: 38.75rem;
+  /* border-bottom: 1px solid black; */
+  justify-content: center;
+  align-items: center;
+  column-gap: 7rem;
+}
+
+.container_first {
+  /* 445 361 */
+  display: flex;
+  flex-direction: column;
+  width: 445px;
+  height: 361px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /* row-gap: 61px; */
+}
+
+.container_first_h {
+  margin: 0;
+  font-family: "Roboto";
+  font-size: 60px;
+  color: #4c5866;
+}
+
+.container_first_p {
+  width: 440px;
+  height: 110px;
+  color: rgba(133, 133, 155, 1);
+  font-family: "Roboto";
+  font-size: 18px;
+  text-align: start;
+  line-height: 150%;
+}
+
+.img_first {
+  padding: 0;
+  width: 540px;
+  align-self: flex-end;
+}
+.img_first img,
+source {
+  display: block;
+}
+
+.first_but {
+  width: 255px;
+  height: 70px;
+  background-color: white;
+  border: 1px solid rgba(120, 117, 254, 1);
+  font-family: "Roboto";
+  font-size: 20px;
+  color: rgba(120, 117, 254, 1);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.first_but:hover {
+  background-color: rgba(120, 117, 254, 1);
+  color: white;
+}
+
+/* @media (max-width: 992px) {
+  .img_first img {
+    clip-path: inset(0 0 30% 0);
+    scale: 0.5;
+  }
+} */
+
+.second {
+  width: 100%;
+  background-color: rgb(235, 235, 235);
+  height: 950px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 2rem;
+  flex-wrap: wrap;
+  height: 139px;
+}
+
+.main_card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 100%;
+  height: 100%;
+}
+
+.text_main_card {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+
+.p_t {
+  font-family: "Roboto";
+  font-size: 18px;
+  color: rgba(133, 133, 155, 1);
+  line-height: 170%;
+  margin: 5px;
+}
+.p_tt {
+  font-family: "Roboto";
+  font-size: 18px;
+  color: rgba(133, 133, 155, 1);
+  margin: 0;
+  line-height: 140%;
+}
+.p_h {
+  font-family: "Roboto";
+  font-size: 18px;
+  color: rgba(102, 102, 102, 1);
+  margin: 0;
+}
+
+.p_h_main {
+  font-family: "Roboto";
+  font-size: 40px;
+  color: rgba(102, 102, 102, 1);
+  margin-bottom: 1rem;
+  line-height: 100%;
+}
+.card1,
+.card2,
+.card3 {
+  display: flex;
+  width: 350px;
+  column-gap: 2rem;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid rgb(204, 204, 204);
+}
+
+.text_card1,
+.text_card2,
+.text_card3 {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  justify-content: center;
+}
+
+.third {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 645px;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+.img_prod {
+  margin-bottom: 10px;
+}
+
+.block1,
+.block2,
+.block3,
+.block4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 255px;
+  height: 456px;
+  row-gap: 10px;
+}
+
+.block1 *:not(.img_prod, .a_prod),
+.block2 *:not(.img_prod, .a_prod),
+.block3 *:not(.img_prod, .a_prod),
+.block4 *:not(.img_prod, .a_prod) {
+  margin: 0;
+}
+
+.block1 h1,
+.block2 h1,
+.block3 h1,
+.block4 h1 {
+  font-family: "Roboto";
+  font-size: 30px;
+  line-height: 100%;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+.third h1 + p {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: rgba(181, 181, 189, 1);
+}
+
+.third p ~ p {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 170%;
+  color: rgba(133, 133, 155, 1);
+}
+
+.a_prod {
+  display: flex;
+  flex-direction: row;
+  width: 129px;
+  height: 23px;
+  column-gap: 5px;
+  margin-top: 10px;
+}
+
+.a_prod a {
+  text-decoration: none;
+  width: 104px;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  color: rgba(120, 117, 254, 1);
+  transition: color 0.3s ease;
+}
+
+.a_prod svg {
+  fill: rgba(120, 117, 254, 1);
+  align-self: center;
+  transition: fill 0.3s ease;
+}
+
+.a_prod:hover a {
+  color: rgb(55, 52, 255);
+}
+
+.a_prod:hover svg {
+  fill: rgb(55, 52, 255);
+  cursor: pointer;
+}
+
+.sec_1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(235, 235, 235);
+  height: 250px;
+}
+
+.four {
+  /* width: 720px; */
+  height: 135px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+.part1,
+.part2,
+.part3,
+.part4 {
+  width: 255px;
+  height: 135px;
+  border: 1px solid rgb(204, 204, 204);
+}
+
+.part1 a,
+.part2 a,
+.part3 a,
+.part4 a {
+  width: 255px;
+  height: 135px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sec_2 {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scetch {
+  display: flex;
+  /* width: 80%; */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid greenyellow; */
+  height: inherit;
+  column-gap: 2rem;
+}
+
+.s_p_1 {
+  display: flex;
+  flex-direction: column;
+  /* height: 272px; */
+  width: 350px;
+  row-gap: 1rem;
+}
+.s_p_2 {
+  align-self: flex-end;
+  height: 410px;
+}
+
+.s_p_1 h1 {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 100%;
+  color: rgba(102, 102, 102, 1);
+}
+
+.s_p_1 p {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 170%;
+  color: rgba(133, 133, 155, 1);
+}
+
+.but {
+  width: 255px;
+  height: 70px;
+  background-color: white;
+  border: 1px solid rgba(120, 117, 254, 1);
+  color: rgba(120, 117, 254, 1);
+  font-family: "Roboto";
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+  margin-top: 0.8rem;
+}
+
+.s_p_1 button:hover {
+  background-color: rgba(120, 117, 254, 1);
+  color: white;
+  cursor: pointer;
+}
+.s_p_1 *:not(.but) {
+  margin: 0;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 101px;
+}
+
+.foot_1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 90%;
+  background-color: rgb(76, 88, 102);
+  width: 100%;
+}
+
+.foot_2 p {
+  font-family: "Roboto";
+  font-size: 13px;
+  line-height: 100%;
+  margin: 4px;
+  color: rgb(76, 88, 102);
+}
+
+.foot_2 p span {
+  font-family: "Roboto";
+  font-size: 13px;
+  line-height: 100%;
+  color: rgb(188, 188, 188);
+}
+
+.foot_buts {
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+}
+
+.foot_buts a {
+  width: 24px;
+  height: 24px;
+  background-color: rgb(76, 88, 102);
+  padding: 0;
+  border: none;
+}
+
+.foot_buts a svg {
+  fill: white;
+  transition: fill 0.3s ease;
+}
+
+.foot_buts a svg:hover {
+  fill: rgb(137, 182, 254);
+}
+
+/* @media (max-width: 1200px) {
+  body > * {
+    width: 1000px;
+  }
+} */
